@@ -7,10 +7,11 @@ class Anagram
   end
 
   def match(words)
-    word_hash = self.to_hash(self.word)
-    words.select{|test| self.hash_equality(word_hash, self.to_hash(test))}
+    word_hash = to_hash(self.word)
+    words.select{|test| hash_equality(word_hash, to_hash(test))}
   end
 
+  private
   def to_hash(word)
     chars = word.split('')
     hash = {}
